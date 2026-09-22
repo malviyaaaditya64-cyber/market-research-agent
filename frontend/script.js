@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     warningSection.style.display = 'none';
 
     try {
-      const postResp = await fetch('http://localhost:8000/research', {
+      const postResp = await fetch('https://market-research-agent-ekvl.onrender.com/research', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ company_name: companyName })
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!jobId) return;
     const interval = setInterval(async () => {
       try {
-        const resp = await fetch(`http://localhost:8000/status/${jobId}`);
+        const resp = await fetch(`https://market-research-agent-ekvl.onrender.com/status/${jobId}`);
         const data = await resp.json();
 
         updateTimeline(data.step);
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.step === 'done') {
           clearInterval(interval);
 
-          const reportResp = await fetch(`http://localhost:8000/report/${jobId}`);
+          const reportResp = await fetch(`https://market-research-agent-ekvl.onrender.com/report/${jobId}`);
           const reportData = await reportResp.json();
 
           if (reportData.report) {
