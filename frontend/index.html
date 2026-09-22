@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Research Agent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>Market Research Agent</h1>
+    <p class="subtitle">AUTONOMOUS ANALYSIS SYSTEM</p>
+  </header>
+
+  <div class="search-row">
+    <input type="text" id="companyInput" placeholder="Enter a company or product name...">
+    <button id="researchBtn" class="btn-primary">Research</button>
+  </div>
+
+  <div class="timeline-wrapper">
+    <nav class="timeline-nav" aria-label="Research steps">
+      <ul class="timeline-steps">
+        <li class="step step-research" aria-label="Research step"><span class="step-number">1</span><span class="step-label">Research</span></li>
+        <li class="step step-analysis" aria-label="Analysis step"><span class="step-number">2</span><span class="step-label">Analysis</span></li>
+        <li class="step step-writing" aria-label="Writing step"><span class="step-number">3</span><span class="step-label">Writing</span></li>
+        <li class="step step-critique" aria-label="Critique step"><span class="step-number">4</span><span class="step-label">Critique</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="score-display" id="scoreDisplay" style="display:none">
+    <div class="score-value" id="scoreValue">0/10</div>
+    <div class="score-label">Opportunity Score</div>
+  </div>
+
+  <div class="swot-grid" id="swotGrid" style="display:none">
+    <div class="swot-cell strengths">
+      <h3>Strengths</h3>
+      <ul id="strengthsList"><li>Loading…</li></ul>
+    </div>
+    <div class="swot-cell weaknesses">
+      <h3>Weaknesses</h3>
+      <ul id="weaknessesList"><li>Loading…</li></ul>
+    </div>
+    <div class="swot-cell opportunities">
+      <h3>Opportunities</h3>
+      <ul id="opportunitiesList"><li>Loading…</li></ul>
+    </div>
+    <div class="swot-cell threats">
+      <h3>Threats</h3>
+      <ul id="threatsList"><li>Loading…</li></ul>
+    </div>
+  </div>
+
+  <main class="report-card" id="reportCard" style="display:none">
+    <div class="report-header">
+      <h2 id="reportTitle">Executive Summary</h2>
+    </div>
+    <div class="report-content" id="reportContent"></div>
+  </main>
+
+  <div class="warning-section" id="warningSection" style="display:none">
+    <h3 class="warning-title">Unverified Claims</h3>
+    <div class="warning-content" id="warningContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
